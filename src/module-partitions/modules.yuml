@@ -1,0 +1,12 @@
+// {type:package}
+// {direction:topDown}
+
+[main]import->[Foo]
+[main]->[Baz-impl]
+[Foo]import & export->[Foo-interface]
+[Foo]import->[Foo-impl]
+
+
+[note: Foo exports the bar(int):int and print<T>(T):void functions]-[Foo]
+[note: Only contains the bar(int):int implementation]-[Foo-impl]
+[note: Even though Foo contains and exports the baz():double definition, it is implemented by the Baz-impl.cpp file]-[Baz-impl]
